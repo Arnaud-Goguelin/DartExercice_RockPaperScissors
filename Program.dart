@@ -5,7 +5,6 @@ enum Move {
   rock,
   paper,
   scissors,
-  waiting,
 }
 
 var gameCount = 0;
@@ -23,8 +22,7 @@ Your input: """);
     final AIChoice = Move.values[randomNumber];
 
     final input = stdin.readLineSync();
-    // Il est nécessaire d'initialiser la variable playerChoice, une valeur null par défaut empêche une excécution correcte.
-    var playerChoice = Move.values[3];
+    Move? playerChoice;
 
     switch (input) {
       case 'q':
@@ -33,7 +31,7 @@ Your input: """);
         playerChoice = Move.rock;
         break;
       case 'p':
-        playerChoice = Move.values[1];
+        playerChoice = Move.paper;
         break;
       case 's':
         playerChoice = Move.scissors;
